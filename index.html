@@ -2,23 +2,58 @@
   <head>
     <meta charset="utf-8">
     <title>DressCode</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="assets/css/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="assets/css/style.css" media="screen" title="no title">
+    <script src="assets/libs/angular.min.js"></script>
+    <script src="assets/libs/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap.min.js"></script>
+    <script src="app/login/loginController.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
   </head>
   <body ng-app='dresscode'>
     <div class="container">
-      <div ng-include="'app/shared/header/header.html'"></div>
-      <div ng-include="'app/shared/carousel/products_carousel.html'"></div>
-      <div ng-include="'app/shared/footer/footer.html'"></div>
-      <ng-view></ng-view>
+      <div ng-view></div>
     </div>
   </body>
-  <script src="assets/libs/angular.min.js" charset="utf-8"></script>
-  <script src="assets/libs/jquery.min.js" charset="utf-8"></script>
-  <script src="assets/libs/bootstrap.min.js" charset="utf-8"></script>
-  <script src="app/app.js" charset="utf-8"></script>
-  <script src="app/route.js" charset="utf-8"></script>
-  <script src="app/login/loginController.js" charset="utf-8"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-
+  <script type="text/javascript">
+  var app = angular.module('dresscode',["ngRoute"]);
+  app.config(['$routeProvider', function($routeProvider) {
+     $routeProvider
+     .when('/', {
+        templateUrl: 'app/dresscode/dresscode.html',
+        controller: 'loginController'
+     })
+     .when('/home', {
+        templateUrl: 'app/dashboard/dashboard.html',
+        controller:'productsController'
+     })
+     .when('/cart', {
+        templateUrl: 'app/cart/cart.html'
+     })
+     .when('/logout', {
+      templateUrl: 'app/dresscode/dresscode.html'
+     })
+     .otherwise({ redirectTo: '/' });
+  }]);
+  app.controller('loginController',['$scope','$location',function($scope,$location){
+    $scope.loginCheck = function(){
+      var email = $scope.email;
+      var password = $scope.password ;
+      if(login(email,password)){
+        $location.path("/home");
+      }
+    };
+    function login(e,p){
+      if(e == 'amanarora.ar@gmail.com' && p == '111111')
+        return true;
+      else return false;
+    }
+  }]);
+  app.controller('productsController',function($scope,$http){
+    $http.get('app/products/products.json')
+    .then(function(response){
+      $scope.products = response.data;
+    })
+  });
+  </script>
 </html>

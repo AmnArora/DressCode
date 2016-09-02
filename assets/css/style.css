@@ -12,3 +12,21 @@
     width: 200px;
     background-color: red;
   }
+  .category_partial img{
+    height: 200px;
+  }
+  .category_partial{
+    padding: 2px;
+    margin-top:5px;
+  }
+  .thankyou{
+    color:black;
+    font-size: 22px;
+    font-family: cursive;
+  }
+  .footers div {
+    background-color: gray;
+  }
+  #footer_heading{
+    color: white;
+  }

@@ -1,0 +1,65 @@
+[
+  {
+    "id":1,
+    "name":"Product 1",
+    "category":"men",
+    "isAvailable":true,
+    "soldOut":false,
+    "price":"20",
+    "imgsrc":"assets/img/products/product_1.jpg"
+  },
+  {
+    "id":2,
+    "name":"Product 2",
+    "category":"men",
+    "isAvailable":true,
+    "soldOut":false,
+    "price":"20",
+    "imgsrc":"assets/img/products/product_1.jpg"
+  },
+  {
+    "id":3,
+    "name":"Product 3",
+    "category":"men",
+    "isAvailable":true,
+    "soldOut":false,
+    "price":"20",
+    "imgsrc":"assets/img/products/product_1.jpg"
+  },
+  {
+    "id":4,
+    "name":"Product 4",
+    "category":"men",
+    "isAvailable":true,
+    "soldOut":false,
+    "price":"20",
+    "imgsrc":"assets/img/products/product_1.jpg"
+  },
+  {
+    "id":5,
+    "name":"Product 5",
+    "category":"men",
+    "isAvailable":true,
+    "soldOut":false,
+    "price":"20",
+    "imgsrc":"assets/img/products/product_1.jpg"
+  },
+  {
+    "id":6,
+    "name":"Product 6",
+    "category":"men",
+    "isAvailable":true,
+    "soldOut":false,
+    "price":"20",
+    "imgsrc":"assets/img/products/product_1.jpg"
+  },
+  {
+    "id":7,
+    "name":"Product 7",
+    "category":"men",
+    "isAvailable":true,
+    "soldOut":false,
+    "price":"20",
+    "imgsrc":"assets/img/products/product_1.jpg"
+  }
+]

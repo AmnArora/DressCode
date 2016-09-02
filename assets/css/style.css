@@ -1,0 +1,14 @@
+  .login_background{
+    background-image: url('../img/login_background.jpg');
+  }
+  .orange{
+    background-color: #D35400;
+  }
+  .white_text{
+    color: white;
+  }
+  .box{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+  }

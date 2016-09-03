@@ -1,5 +1,5 @@
   .login_background{
-    background-image: url('../img/login_background.jpg');
+    background-color: #D35400;
   }
   .orange{
     background-color: #D35400;
@@ -24,9 +24,12 @@
     font-size: 22px;
     font-family: cursive;
   }
-  .footers div {
-    background-color: gray;
-  }
-  #footer_heading{
+  .footer_header{
+    background-color: #D35400;
     color: white;
+    font-size: 18px;
+    font-family: cursive;
+  }
+  #footer{
+    background-color:rgba(211, 84, 0,0.1);
   }

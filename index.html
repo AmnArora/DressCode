@@ -35,15 +35,20 @@
      })
      .otherwise({ redirectTo: '/' });
   }]);
-  app.controller('loginController',['$scope','$location',function($scope,$location){
+  app.controller('loginController',['$scope','$location','$http',function($scope,$location,$http){
     $scope.loginCheck = function(){
       var email = $scope.email;
       var password = $scope.password ;
+      var users;
       if(login(email,password)){
         $location.path("/home");
       }
     };
     function login(e,p){
+      $http.get('app/login/users.json')
+      .then(function(response,users){
+        users = response.data;
+      });
       if(e == 'amanarora.ar@gmail.com' && p == '111111')
         return true;
       else return false;

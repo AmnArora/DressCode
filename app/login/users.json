@@ -1,0 +1,26 @@
+[
+  {
+    "email":"aman.arora@comprotechnologies.com",
+    "password":"aman.arora",
+    "name":"Aman Arora",
+    "cart":[]
+  },
+  {
+    "email":"neelu.singh@comprotechnologies.com",
+    "password":"neelu.singh",
+    "name":"Neelu Singh",
+    "cart":[]
+  },
+  {
+    "email":"ravi.sahu@comprotechnologies.com",
+    "password":"ravi.sahu",
+    "name":"Ravi Sahu",
+    "cart":[]
+  },
+  {
+    "email":"amanarora.ar@gmail.com",
+    "password":"111111",
+    "name":"Aman",
+    "cart":[]
+  }
+]

@@ -6,7 +6,7 @@
     "isAvailable":true,
     "soldOut":false,
     "price":"20",
-    "imgsrc":"assets/img/products/product_1.jpg"
+    "imgsrc":"assets/img/products/men/men (1).jpg"
   },
   {
     "id":2,
@@ -15,7 +15,7 @@
     "isAvailable":true,
     "soldOut":false,
     "price":"20",
-    "imgsrc":"assets/img/products/product_1.jpg"
+    "imgsrc":"assets/img/products/men/men (2).jpg"
   },
   {
     "id":3,
@@ -24,7 +24,7 @@
     "isAvailable":true,
     "soldOut":false,
     "price":"20",
-    "imgsrc":"assets/img/products/product_1.jpg"
+    "imgsrc":"assets/img/products/men/men (3).jpg"
   },
   {
     "id":4,
@@ -33,7 +33,7 @@
     "isAvailable":true,
     "soldOut":false,
     "price":"20",
-    "imgsrc":"assets/img/products/product_1.jpg"
+    "imgsrc":"assets/img/products/men/men (4).jpg"
   },
   {
     "id":5,
@@ -42,7 +42,7 @@
     "isAvailable":true,
     "soldOut":false,
     "price":"20",
-    "imgsrc":"assets/img/products/product_1.jpg"
+    "imgsrc":"assets/img/products/men/men (5).jpg"
   },
   {
     "id":6,
@@ -51,7 +51,7 @@
     "isAvailable":true,
     "soldOut":false,
     "price":"20",
-    "imgsrc":"assets/img/products/product_1.jpg"
+    "imgsrc":"assets/img/products/men/men (6).jpg"
   },
   {
     "id":7,
@@ -60,6 +60,6 @@
     "isAvailable":true,
     "soldOut":false,
     "price":"20",
-    "imgsrc":"assets/img/products/product_1.jpg"
+  "imgsrc":"assets/img/products/men/men (7).jpg"
   }
 ]

@@ -28,33 +28,36 @@
         controller:'productsController'
      })
      .when('/cart', {
-        templateUrl: 'app/cart/cart.html'
+        templateUrl: 'app/cart/cart.html',
+        controller:'cartController'
      })
-     .when('/logout', {
-      templateUrl: 'app/dresscode/dresscode.html'
-     })
+     .when('/logout', { redirectTo: '/' })
      .otherwise({ redirectTo: '/' });
   }]);
-  app.controller('loginController',['$scope','$location','$http',function($scope,$location,$http){
+  app.controller('loginController',['$scope','$location','$http','$rootScope',function($scope,$location,$http,$rootScope){
     $scope.loginCheck = function(){
       var email = $scope.email;
       var password = $scope.password ;
-      var users;
-      if(login(email,password)){
-        $location.path("/home");
-      }
-    };
-    function login(e,p){
       $http.get('app/login/users.json')
       .then(function(response,users){
         users = response.data;
+        angular.forEach(users,function(user,key){
+            if(user.email == email && user.password==password){
+              $rootScope.name = user.name;
+              $location.path("/home");
+            }
+        });
       });
-      if(e == 'amanarora.ar@gmail.com' && p == '111111')
-        return true;
-      else return false;
-    }
+      //$location.path("/home");
+    };
   }]);
   app.controller('productsController',function($scope,$http){
+    $http.get('app/products/products.json')
+    .then(function(response){
+      $scope.products = response.data;
+    })
+  });
+  app.controller('cartController',function($scope,$http){
     $http.get('app/products/products.json')
     .then(function(response){
       $scope.products = response.data;

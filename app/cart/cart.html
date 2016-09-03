@@ -1,2 +1,53 @@
 <div ng-include="'app/shared/header/header_loggedin.html'"></div>
+<p class="thankyou ">
+  Your Shopping Bag
+</p>
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in products" ng-hide="{{product.soldOut}}">
+    <div class="thumbnail">
+      <img ng-src="{{product.imgsrc}}">
+       <div class="caption">
+         <h3>{{product.name}}<button class="btn btn-danger btn-sm pull-right" ng-show="{{product.isAvailable}}">Remove</button></h3>
+         <div class="row">
+           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+             <p>{{product.price|currency }}</p>
+           </div>
+           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+             Quantity<input class="form-control pull-right" type="number" style="width:60px;" name="quantity" value="1" />
+           </div>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <p class="cart_heading">
+      Promotional Code
+    </p>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <input type="text" name="offer" placeholder="Enter Coupon Code" class="form-control"/>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <p class="cart_heading">
+      SubTotal
+    </p>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    Rs 1212
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <p class="cart_heading">
+      Checkout
+    </p>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <button type="button" name="button" class="btn btn-success">Checkout</button>
+  </div>
+</div>
 <div ng-include="'app/shared/footer/footer.html'"></div>

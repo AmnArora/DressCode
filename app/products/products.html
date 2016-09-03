@@ -1,3 +1,31 @@
+<div class="row" id="filter_bar">
+  <div class="dropdown pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Filter
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">Men</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">Kids</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Jewellery</a></li>
+    </ul>
+  </div>
+  <div class="dropdown pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Sort By
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <li><a href="#">Men</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">Kids</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Jewellery</a></li>
+    </ul>
+  </div>
+</div>
 <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="product in products" ng-hide="{{product.soldOut}}">
     <div class="thumbnail">

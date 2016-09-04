@@ -25,11 +25,11 @@
      })
      .when('/home', {
         templateUrl: 'app/dashboard/dashboard.html',
-        controller:'productsController'
+        controller:'cartController'
      })
      .when('/cart', {
         templateUrl: 'app/cart/cart.html',
-        controller:'cartController'
+        controller:'cart'
      })
      .when('/logout', { redirectTo: '/' })
      .otherwise({ redirectTo: '/' });
@@ -43,7 +43,7 @@
         users = response.data;
         angular.forEach(users,function(user,key){
             if(user.email == email && user.password==password){
-              $rootScope.name = user.name;
+              $rootScope.id = user.id;
               $location.path("/home");
             }
         });
@@ -51,17 +51,47 @@
       //$location.path("/home");
     };
   }]);
-  app.controller('productsController',function($scope,$http){
-    $http.get('app/products/products.json')
-    .then(function(response){
-      $scope.products = response.data;
-    })
+  app.controller('cartController',function($scope,$http,$rootScope){
+    $rootScope.cart = [];
+    $scope.cart = $rootScope.cart;
+    $http.get('app/products/products.json').success(function (response) {
+      $scope.products = response;
+    });
+    $scope.addToCart = function (product) {
+      var found = false;
+      $rootScope.cart.forEach(function (item) {
+        if (item.id === product.id) {
+          item.quantity++;
+          found = true;
+        }
+      });
+      if (!found) {
+        $rootScope.cart.push(angular.extend({quantity: 1}, product));
+      }
+      console.log($rootScope.cart);
+    };
   });
-  app.controller('cartController',function($scope,$http){
-    $http.get('app/products/products.json')
-    .then(function(response){
-      $scope.products = response.data;
-    })
+  app.controller('cart',function($scope,$http,$rootScope){
+    $scope.cart = $rootScope.cart || [];
+    $scope.getCartPrice = function(){
+      var total = 0;
+      $scope.cart.forEach(function (product) {
+        total += product.price * product.quantity;
+        console.log(product.quantity);
+      });
+      return total;
+    };
+    $scope.removeFromCart = function (product) {
+      var newCart = [];
+      $rootScope.cart.forEach(function (item) {
+        if (item.id != product.id) {
+          newCart.push(item);
+        }
+      });
+      $scope.cart = newCart;
+      $rootScope.cart = newCart;
+      console.log($rootScope.cart);
+    };
   });
   </script>
 </html>

@@ -9,6 +9,7 @@
     <script src="assets/libs/bootstrap.min.js"></script>
     <script src="app/login/loginController.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
   </head>
   <body ng-app='dresscode'>
     <div class="container">
@@ -16,7 +17,7 @@
     </div>
   </body>
   <script type="text/javascript">
-  var app = angular.module('dresscode',["ngRoute"]);
+  var app = angular.module('dresscode',['ngRoute','ngAnimate']);
   app.config(['$routeProvider', function($routeProvider) {
      $routeProvider
      .when('/', {

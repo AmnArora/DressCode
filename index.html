@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="assets/css/style.css" media="screen" title="no title">
     <script src="assets/libs/angular.min.js"></script>
     <script src="assets/libs/jquery.min.js"></script>
+    <script src="assets/libs/angular-local-storage.min.js"></script>
     <script src="assets/libs/bootstrap.min.js"></script>
     <script src="app/login/loginController.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
@@ -17,8 +18,12 @@
     </div>
   </body>
   <script type="text/javascript">
-  var app = angular.module('dresscode',['ngRoute','ngAnimate']);
-  app.config(['$routeProvider', function($routeProvider) {
+  var app = angular.module('dresscode',['ngRoute','ngAnimate','LocalStorageModule']);
+  app.config(['$routeProvider','localStorageServiceProvider', function($routeProvider,localStorageServiceProvider) {
+    localStorageServiceProvider
+    .setPrefix('dresscode');
+    localStorageServiceProvider
+    .setStorageType('sessionStorage');
      $routeProvider
      .when('/', {
         templateUrl: 'app/dresscode/dresscode.html',
@@ -32,10 +37,13 @@
         templateUrl: 'app/cart/cart.html',
         controller:'cart'
      })
-     .when('/logout', { redirectTo: '/' })
+     .when('/logout', {
+       templateUrl: 'app/logout/logout.html',
+       controller:'logout'
+      })
      .otherwise({ redirectTo: '/' });
   }]);
-  app.controller('loginController',['$scope','$location','$http','$rootScope',function($scope,$location,$http,$rootScope){
+  app.controller('loginController',['$scope','$location','$http','$rootScope','localStorageService',function($scope,$location,$http,$rootScope,localStorageService){
     $scope.loginCheck = function(){
       var email = $scope.email;
       var password = $scope.password ;
@@ -45,15 +53,35 @@
         angular.forEach(users,function(user,key){
             if(user.email == email && user.password==password){
               $rootScope.id = user.id;
+              $rootScope.user = user;
+              if(localStorageService.isSupported) {
+                localStorageService.set('ActiveUser', user);
+              }
               $location.path("/home");
             }
         });
       });
-      //$location.path("/home");
     };
   }]);
-  app.controller('cartController',function($scope,$http,$rootScope){
-    $rootScope.cart = [];
+  app.controller('cartController',function($scope,$http,$rootScope,$location,localStorageService){
+    if($rootScope.user){
+      $scope.name = $rootScope.user.name;
+    } else {
+      if(localStorageService.get("ActiveUser")){
+        $rootScope.user = localStorageService.get("ActiveUser");
+        $scope.name = $rootScope.user.name;
+        console.log(localStorageService.get("ActiveUser"));
+      } else {
+        $location.path("/");
+      }
+
+    }
+    if(localStorageService.get("cartItems")){
+      $rootScope.cart = localStorageService.get("cartItems");
+      console.log(localStorageService.get("cartItems"));
+    }else {
+        $rootScope.cart = [];
+    }
     $scope.cart = $rootScope.cart;
     $http.get('app/products/products.json').success(function (response) {
       $scope.products = response;
@@ -69,11 +97,31 @@
       if (!found) {
         $rootScope.cart.push(angular.extend({quantity: 1}, product));
       }
+      if(localStorageService.isSupported) {
+        localStorageService.set('cartItems', $rootScope.cart);
+      }
       console.log($rootScope.cart);
     };
   });
-  app.controller('cart',function($scope,$http,$rootScope){
-    $scope.cart = $rootScope.cart || [];
+  app.controller('cart',function($scope,$http,$rootScope,$location,localStorageService){
+    if($rootScope.user){
+      $scope.name = $rootScope.user.name;
+    } else {
+      if(localStorageService.get("ActiveUser")){
+        $rootScope.user = localStorageService.get("ActiveUser");
+        $scope.name = $rootScope.user.name;
+        console.log(localStorageService.get("ActiveUser"));
+        } else {
+          $location.path("/");
+        }
+    }
+    if(localStorageService.get("cartItems")){
+      $rootScope.cart = localStorageService.get("cartItems");
+      console.log(localStorageService.get("cartItems"));
+    }else {
+        $rootScope.cart = [];
+    }
+    $scope.cart = $rootScope.cart;
     $scope.getCartPrice = function(){
       var total = 0;
       $scope.cart.forEach(function (product) {
@@ -94,5 +142,12 @@
       console.log($rootScope.cart);
     };
   });
+  app.controller('logout',['$scope','$location','$http','$rootScope','localStorageService',function($scope,$location,$http,$rootScope,localStorageService){
+    if(localStorageService.get("ActiveUser")){
+      localStorageService.remove("ActiveUser");
+    } else {
+      $location.path("/");
+    }
+  }]);
   </script>
 </html>

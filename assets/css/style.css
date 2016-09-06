@@ -98,6 +98,8 @@
   right: 16px;
 }
 
-.thumbnail img{
+.thumbnail a img,
+.thumbnail img
+{
   height: 250px;
 }

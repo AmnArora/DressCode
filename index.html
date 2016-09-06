@@ -113,6 +113,9 @@
       }
       console.log($rootScope.cart);
     };
+    $scope.setProduct = function(product){
+      $scope.detail = product;
+    };
   });
   app.controller('cart',function($scope,$http,$rootScope,$location,localStorageService){
     if($rootScope.user){
@@ -150,6 +153,9 @@
       });
       $scope.cart = newCart;
       $rootScope.cart = newCart;
+      if(localStorageService.isSupported) {
+        localStorageService.set('cartItems', $rootScope.cart);
+      }
       console.log($rootScope.cart);
     };
   });

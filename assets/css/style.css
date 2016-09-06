@@ -97,3 +97,7 @@
   bottom: 35%;
   right: 16px;
 }
+
+.thumbnail img{
+  height: 250px;
+}

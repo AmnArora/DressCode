@@ -82,8 +82,19 @@
     }else {
         $rootScope.cart = [];
     }
+    var shuffleArray = function(array) {
+        var m = array.length, t, i;
+        while (m) {
+          i = Math.floor(Math.random() * m--);
+          t = array[m];
+          array[m] = array[i];
+          array[i] = t;
+        }
+        return array;
+      }
     $scope.cart = $rootScope.cart;
     $http.get('app/products/products.json').success(function (response) {
+      shuffleArray(response);
       $scope.products = response;
     });
     $scope.addToCart = function (product) {

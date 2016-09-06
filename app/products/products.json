@@ -1,65 +1,282 @@
 [
-  {
-    "id":1,
-    "name":"Product 1",
-    "category":"men",
-    "isAvailable":true,
-    "soldOut":false,
-    "price":"20",
-    "imgsrc":"assets/img/products/men/men (1).jpg"
-  },
-  {
-    "id":2,
-    "name":"Product 2",
-    "category":"men",
-    "isAvailable":true,
-    "soldOut":false,
-    "price":"20",
-    "imgsrc":"assets/img/products/men/men (2).jpg"
-  },
-  {
-    "id":3,
-    "name":"Product 3",
-    "category":"men",
-    "isAvailable":true,
-    "soldOut":false,
-    "price":"20",
-    "imgsrc":"assets/img/products/men/men (3).jpg"
-  },
-  {
-    "id":4,
-    "name":"Product 4",
-    "category":"men",
-    "isAvailable":true,
-    "soldOut":false,
-    "price":"20",
-    "imgsrc":"assets/img/products/men/men (4).jpg"
-  },
-  {
-    "id":5,
-    "name":"Product 5",
-    "category":"men",
-    "isAvailable":true,
-    "soldOut":false,
-    "price":"20",
-    "imgsrc":"assets/img/products/men/men (5).jpg"
-  },
-  {
-    "id":6,
-    "name":"Product 6",
-    "category":"men",
-    "isAvailable":true,
-    "soldOut":false,
-    "price":"20",
-    "imgsrc":"assets/img/products/men/men (6).jpg"
-  },
-  {
-    "id":7,
-    "name":"Product 7",
-    "category":"men",
-    "isAvailable":true,
-    "soldOut":false,
-    "price":"20",
-  "imgsrc":"assets/img/products/men/men (7).jpg"
-  }
+{
+"index": 1,
+"price": 1,
+"name": "Anna",
+"imgsrc": "assets/img/products/men/men (1).jpg",
+"category": "he"
+},
+{
+"index": 2,
+"price": 34,
+"name": "Amanda",
+"imgsrc": "assets/img/products/men/men (2).jpg",
+"category": "he"
+},
+{
+"index": 3,
+"price": 13,
+"name": "Calvin",
+"imgsrc": "assets/img/products/men/men (3).jpg",
+"category": "he"
+},
+{
+"index": 4,
+"price": 45,
+"name": "Mary",
+"imgsrc": "assets/img/products/men/men (4).jpg",
+"category": "he"
+},
+{
+"index": 5,
+"price": 30,
+"name": "Gladys",
+"imgsrc": "assets/img/products/men/men (5).jpg",
+"category": "he"
+},
+{
+"index": 6,
+"price": 26,
+"name": "Dennis",
+"imgsrc": "assets/img/products/men/men (6).jpg",
+"category": "he"
+},
+{
+"index": 7,
+"price": 37,
+"name": "Larry",
+"imgsrc": "assets/img/products/men/men (7).jpg",
+"category": "he"
+},
+{
+"index": 8,
+"price": 9,
+"name": "Luis",
+"imgsrc": "assets/img/products/men/men (8).jpg",
+"category": "he"
+},
+{
+"index": 9,
+"price": 34,
+"name": "Norman",
+"imgsrc": "assets/img/products/men/men (9).jpg",
+"category": "he"
+},
+{
+"index": 10,
+"price": 32,
+"name": "Harold",
+"imgsrc": "assets/img/products/men/men (10).jpg",
+"category": "he"
+},
+{
+"index": 11,
+"price": 6,
+"name": "Keith",
+"imgsrc": "assets/img/products/men/men (11).jpg",
+"category": "he"
+},
+{
+"index": 12,
+"price": 14,
+"name": "Miriam",
+"imgsrc": "assets/img/products/men/men (12).jpg",
+"category": "he"
+},
+{
+"index": 13,
+"price": 44,
+"name": "Brooke",
+"imgsrc": "assets/img/products/men/men (13).jpg",
+"category": "he"
+},
+{
+"index": 14,
+"price": 44,
+"name": "Gayle",
+"imgsrc": "assets/img/products/men/men (14).jpg",
+"category": "he"
+},
+{
+"index": 15,
+"price": 4,
+"name": "Cheryl",
+"imgsrc": "assets/img/products/men/men (15).jpg",
+"category": "he"
+},
+{
+"index": 16,
+"price": 7,
+"name": "Marsha",
+"imgsrc": "assets/img/products/men/men (16).jpg",
+"category": "he"
+},
+{
+"index": 17,
+"price": 41,
+"name": "Janet",
+"imgsrc": "assets/img/products/men/men (17).jpg",
+"category": "he"
+},
+{
+"index": 18,
+"price": 49,
+"name": "Alfred",
+"imgsrc": "assets/img/products/men/men (18).jpg",
+"category": "he"
+},
+{
+"index": 19,
+"price": 32,
+"name": "Bonnie",
+"imgsrc": "assets/img/products/men/men (19).jpg",
+"category": "he"
+},
+{
+"index": 20,
+"price": 12,
+"name": "Betty",
+"imgsrc": "assets/img/products/men/men (20).jpg",
+"category": "he"
+},
+{
+"index": 21,
+"price": 41,
+"name": "Frederick",
+"imgsrc": "assets/img/products/women/women (1).jpg",
+"category": "women"
+},
+{
+"index": 22,
+"price": 36,
+"name": "Judy",
+"imgsrc": "assets/img/products/women/women (2).jpg",
+"category": "women"
+},
+{
+"index": 23,
+"price": 4,
+"name": "Paige",
+"imgsrc": "assets/img/products/women/women (3).jpg",
+"category": "women"
+},
+{
+"index": 24,
+"price": 30,
+"name": "Alice",
+"imgsrc": "assets/img/products/women/women (4).jpg",
+"category": "women"
+},
+{
+"index": 25,
+"price": 1,
+"name": "Tim",
+"imgsrc": "assets/img/products/women/women (5).jpg",
+"category": "women"
+},
+{
+"index": 26,
+"price": 16,
+"name": "Geoffrey",
+"imgsrc": "assets/img/products/women/women (6).jpg",
+"category": "women"
+},
+{
+"index": 27,
+"price": 29,
+"name": "Eric",
+"imgsrc": "assets/img/products/women/women (7).jpg",
+"category": "women"
+},
+{
+"index": 28,
+"price": 11,
+"name": "Edgar",
+"imgsrc": "assets/img/products/women/women (8).jpg",
+"category": "women"
+},
+{
+"index": 29,
+"price": 21,
+"name": "Kim",
+"imgsrc": "assets/img/products/women/women (9).jpg",
+"category": "women"
+},
+{
+"index": 30,
+"price": 24,
+"name": "Chris",
+"imgsrc": "assets/img/products/women/women (10).jpg",
+"category": "women"
+},
+{
+"index": 31,
+"price": 8,
+"name": "Larry",
+"imgsrc": "assets/img/products/women/women (11).jpg",
+"category": "women"
+},
+{
+"index": 32,
+"price": 6,
+"name": "Allison",
+"imgsrc": "assets/img/products/women/women (12).jpg",
+"category": "women"
+},
+{
+"index": 33,
+"price": 44,
+"name": "Peter",
+"imgsrc": "assets/img/products/women/women (13).jpg",
+"category": "women"
+},
+{
+"index": 34,
+"price": 18,
+"name": "Gene",
+"imgsrc": "assets/img/products/women/women (14).jpg",
+"category": "women"
+},
+{
+"index": 35,
+"price": 2,
+"name": "Christopher",
+"imgsrc": "assets/img/products/women/women (15).jpg",
+"category": "women"
+},
+{
+"index": 36,
+"price": 41,
+"name": "Barry",
+"imgsrc": "assets/img/products/women/women (16).jpg",
+"category": "women"
+},
+{
+"index": 37,
+"price": 9,
+"name": "Bobby",
+"imgsrc": "assets/img/products/women/women (17).jpg",
+"category": "women"
+},
+{
+"index": 38,
+"price": 17,
+"name": "Sharon",
+"imgsrc": "assets/img/products/women/women (18).jpg",
+"category": "women"
+},
+{
+"index": 39,
+"price": 45,
+"name": "Lee",
+"imgsrc": "assets/img/products/women/women (19).jpg",
+"category": "women"
+},
+{
+"index": 40,
+"price": 38,
+"name": "Sidney",
+"imgsrc": "assets/img/products/women/women (20).jpg",
+"category": "women"
+}
 ]

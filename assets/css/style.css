@@ -95,9 +95,8 @@
 }
 
 .shopping-cart button {
-  position: fixed;
-  bottom: 20%;
-  right: 1%;
+  position: absolute;
+  right: 10px;
 }
 
 .thumbnail a img,

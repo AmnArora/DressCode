@@ -19,7 +19,7 @@
     </div>
 </div>
 <div ng-if="cart.length" class="shopping-cart" ng-controller="cart">
-  <h2>{{cart.length}} items in cart, {{getCartPrice();}}$</h2>
+  <h2>{{cart.length}} item(s) in cart, {{getCartPrice();}}$</h2>
   <span class="cart-item th radius" ng-repeat="product in cart">
     <img ng-src="{{product.imgsrc}}" title="{{product.title}}"/>
     <span class="badge" ng-show="product.quantity > 0">
@@ -27,12 +27,10 @@
     </span>
   </span>
   <a href="#cart">
-    <button type="button" class="btn btn-success btn-xs">
-      <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart
-    </button>
+      <button class="btn btn-success glyphicon glyphicon-shopping-cart" >Carty</button>
   </a>
 </div>
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="cartController">
+<!--div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="cartController">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -61,4 +59,4 @@
       </div>
     </div>
   </div>
-</div>
+</div -->

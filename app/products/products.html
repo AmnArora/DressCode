@@ -18,9 +18,23 @@
        </div>
     </div>
 </div>
+<div ng-if="cart.length" class="shopping-cart" ng-controller="cart">
+  <h2>{{cart.length}} items in cart, {{getCartPrice();}}$</h2>
+  <span class="cart-item th radius" ng-repeat="product in cart">
+    <img ng-src="{{product.imgsrc}}" title="{{product.title}}"/>
+    <span class="badge" ng-show="product.quantity > 0">
+      x{{product.quantity}}
+    </span>
+  </span>
+  <a href="#cart">
+    <button type="button" class="btn btn-success btn-xs">
+      <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Cart
+    </button>
+  </a>
+</div>
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="cartController">
   <div class="modal-dialog" role="document">
-    <div class="modal-content  login_background">
+    <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title white_text" id="myModalLabel">Product Information - {{detail.name}}</h4>
@@ -47,14 +61,4 @@
       </div>
     </div>
   </div>
-</div>
-<div ng-if="cart.length" class="shopping-cart" ng-controller="cart">
-  <h2>{{cart.length}} items in cart, {{getCartPrice();}}$</h2>
-  <span class="cart-item th radius" ng-repeat="product in cart">
-    <img ng-src="{{product.imgsrc}}" title="{{product.title}}"/>
-    <span class="badge" ng-show="product.quantity > 0">
-      x{{product.quantity}}
-    </span>
-  </span>
-  <a href="#cart"><button class="btn btn-success">Go to Cart</button></a>
 </div>

@@ -47,6 +47,8 @@
   background: #2c3f52;
   color: lightgray;
   box-shadow: 10px 10px 5px #888888;
+  overflow-y: scroll;
+  height: 20%;
 }
 
 .shopping-cart h2 {
@@ -75,8 +77,8 @@
 }
 
 .shopping-cart .cart-item img {
-  height: 92px;
-  width: 92px;
+  height: 50px;
+  width: 50px;
 }
 
 .shopping-cart .cart-item .badge {
@@ -93,9 +95,9 @@
 }
 
 .shopping-cart button {
-  position: absolute;
-  bottom: 35%;
-  right: 16px;
+  position: fixed;
+  bottom: 20%;
+  right: 1%;
 }
 
 .thumbnail a img,

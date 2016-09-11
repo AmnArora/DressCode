@@ -1,4 +1,4 @@
-app.controller('cartController',function($scope,$http,$rootScope,$location,localStorageService){
+-app.controller('cartController',function($scope,$http,$rootScope,$location,localStorageService){
   if($rootScope.user){
     $scope.name = $rootScope.user.name;
   } else {
@@ -46,6 +46,7 @@ app.controller('cartController',function($scope,$http,$rootScope,$location,local
     if(localStorageService.isSupported) {
       localStorageService.set('cartItems', $rootScope.cart);
     }
+    $rootScope.display = true;
     console.log($rootScope.cart);
   };
   $scope.setProduct = function(product){

@@ -13,6 +13,7 @@ app.controller('cart',function($scope,$http,$rootScope,$location,localStorageSer
   if(localStorageService.get("cartItems")){
     $rootScope.cart = localStorageService.get("cartItems");
     console.log(localStorageService.get("cartItems"));
+    $scope.display = true;
   }else {
       $rootScope.cart = [];
   }
@@ -36,6 +37,9 @@ app.controller('cart',function($scope,$http,$rootScope,$location,localStorageSer
     $rootScope.cart = newCart;
     if(localStorageService.isSupported) {
       localStorageService.set('cartItems', $rootScope.cart);
+    }
+    if($rootScope.cart.length==0){
+      $rootScope.display = false;
     }
     console.log($rootScope.cart);
   };

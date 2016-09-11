@@ -18,19 +18,21 @@
        </div>
     </div>
 </div>
-<div ng-if="cart.length" class="shopping-cart" ng-controller="cart">
-  <h2>{{cart.length}} item(s) in cart, {{getCartPrice();}}$</h2>
-  <span class="cart-item th radius" ng-repeat="product in cart">
-    <img ng-src="{{product.imgsrc}}" title="{{product.title}}"/>
-    <span class="badge" ng-show="product.quantity > 0">
-      x{{product.quantity}}
+<div ng-show="display">
+  <div ng-controller="cart" ng-if="display" class="shopping-cart" >
+    <h2>{{cart.length}} item(s) in cart, {{getCartPrice();}}$</h2>
+    <span class="cart-item th radius" ng-repeat="product in cart">
+      <img ng-src="{{product.imgsrc}}" title="{{product.title}}"/>
+      <span class="badge" ng-show="product.quantity > 0">
+        x{{product.quantity}}
+      </span>
     </span>
-  </span>
-  <a href="#cart">
-      <button class="btn btn-success glyphicon glyphicon-shopping-cart" >Carty</button>
-  </a>
+    <a href="#cart">
+        <button class="btn btn-success glyphicon glyphicon-shopping-cart" >Carty</button>
+    </a>
+  </div>
 </div>
-<!--div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="cartController">
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" ng-controller="cartController">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -59,4 +61,4 @@
       </div>
     </div>
   </div>
-</div -->
+</div>

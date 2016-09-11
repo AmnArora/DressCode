@@ -18,8 +18,8 @@
         <tr ng-repeat="product in cart">
           <td><img ng-src="{{product.imgsrc}}" height="50px" width="50px">{{product.name}}</td>
           <td><input class="form-control" type="text" style="width:60px;" name="quantity" ng-model="product.quantity" value= "{{product.quantity}}" ng-bind="{{product.quantity}}" /></td>
-          <td><p>{{product.price|currency }}</p></td>
-          <td>{{product.price*product.quantity| currency}}</td>
+          <td><p>{{product.price|currency :'&#8377;'}}</p></td>
+          <td>{{product.price*product.quantity| currency:'&#8377;'}}</td>
           <td><button class="btn btn-danger btn-sm" ng-click="removeFromCart(product)">Remove</button></td>
         </tr>
       </tbody>
@@ -31,7 +31,7 @@
         </p>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <input type="text" name="offer" placeholder="Enter Coupon Code" class="form-control"/>
+        <form ng-submit="applyCoupon()"><input type="text" name="offer" placeholder="Enter Coupon Code" class="form-control" ng-model="coupon" autocomplete="off" ng-disabled="discount"/></form>
       </div>
     </div>
     <div class="row">
@@ -41,7 +41,7 @@
         </p>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        $ {{getCartPrice()}}
+        <span ng-hide="discount">&#8377;{{getCartPrice()}}</span><span ng-show="discount">&#8377;{{total}}</span>
       </div>
     </div>
     <div class="row">
@@ -54,6 +54,9 @@
         <button type="button" name="button" class="btn btn-success">Checkout</button>
       </div>
     </div>
+  </div>
+  <div ng-hide="{{cart.length}}">
+    <div class="jumbotron">YourCart is Empty</div>
   </div>
 </div>
 <div ng-include="'app/shared/footer/footer.html'"></div>

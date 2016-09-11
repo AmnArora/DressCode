@@ -24,6 +24,7 @@ app.controller('cart',function($scope,$http,$rootScope,$location,localStorageSer
       total += product.price * product.quantity;
       console.log(product.quantity);
     });
+    $scope.total = total/2;
     return total;
   };
   $scope.removeFromCart = function (product) {
@@ -42,5 +43,15 @@ app.controller('cart',function($scope,$http,$rootScope,$location,localStorageSer
       $rootScope.display = false;
     }
     console.log($rootScope.cart);
+  };
+  $scope.discount = false;
+  $scope.applyCoupon = function(){
+    if($scope.coupon == "DC50" || $scope.coupon=="dc50"){
+        console.log($scope.getCartPrice()/2);
+        $scope.total = $scope.getCartPrice()/2;
+        $scope.discount = true;
+    } else {
+      $scope.discount = false;
+    }
   };
 });

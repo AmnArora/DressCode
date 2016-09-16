@@ -1,34 +1,6 @@
 [
   {
     "id":"1",
-    "email":"aman.arora@comprotechnologies.com",
-    "password":"aman.arora",
-    "name":"Aman Arora",
-    "cart":[]
-  },
-  {
-    "id":"2",
-    "email":"neelu.singh@comprotechnologies.com",
-    "password":"neelu.singh",
-    "name":"Neelu Singh",
-    "cart":[]
-  },
-  {
-    "id":"3",
-    "email":"ravi.sahu@comprotechnologies.com",
-    "password":"ravi.sahu",
-    "name":"Ravi Sahu",
-    "cart":[]
-  },
-  {
-    "id":"4",
-    "email":"amanarora.ar@gmail.com",
-    "password":"111111",
-    "name":"Aman",
-    "cart":[]
-  },
-  {
-    "id":"5",
     "email":"test",
     "password":"test",
     "name":"test",
